@@ -95,7 +95,7 @@ main (int argc, char *argv[])
     //printf("test\n");
 
     int i;
-    for(i = 0; i < fileSize; i++)
+    for(i = fileSize - 1; i >= 0; i--)
     {
         int rc = write(outFileCheck, &records[i], sizeof(rec_t));
         if(rc != sizeof(rec_t))
@@ -103,7 +103,7 @@ main (int argc, char *argv[])
             fprintf(stderr, "Error: Cannot write to file %s\n", outFile);
             exit(1);
         }
-    	//printf("%d\n", records[i].key);
+    	printf("%d\n", records[i].key);
     }
 
 	return 0;
