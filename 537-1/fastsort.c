@@ -87,9 +87,11 @@ main (int argc, char *argv[])
     	}
     	//fprintf(stdout, "key: %u\n", r.key);
     	records[counter] = r;
-    	//printf("%d\n", records[counter].key);
+    	printf("%d\n", records[counter].key);
+        counter++;
     }
 
+    printf("\n");
     //printf("test\n");
     qsort(records, fileSize, sizeof(rec_t), cmpfunc);
     //printf("test\n");
@@ -103,7 +105,7 @@ main (int argc, char *argv[])
             fprintf(stderr, "Error: Cannot write to file %s\n", outFile);
             exit(1);
         }
-    	//printf("%d\n", records[i].key);
+    	printf("%d\n", records[i].key);
     }
 
 	return 0;
